@@ -1,4 +1,3 @@
-package com.vishal;
 
 import java.util.Scanner;
 
