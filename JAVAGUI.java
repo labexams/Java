@@ -1,4 +1,6 @@
 
+//⚠ JAVA 8 is mandatory to run this porgram
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
