@@ -1,4 +1,3 @@
-package com.vishal;
 
 import javax.swing.*;
 import java.awt.*;
