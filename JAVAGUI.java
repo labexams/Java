@@ -33,23 +33,8 @@ class ADDSUB extends JFrame{
         add(l);
 
 
-        b1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                int num1 = Integer.parseInt(t1.getText());
-                int num2 = Integer.parseInt(t2.getText());
-                int value = num1 + num2;
-                l.setText(value + "");
-
-            }
-        });
-        b2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent ae) {
-                int num1 = Integer.parseInt(t1.getText());
-                int num2 = Integer.parseInt(t2.getText());
-                int value = num1 - num2;
-                l.setText(value + "");
-            }
-        });
+        b1.addActionListener(this);
+        b2.addActionListener(this);
         setLayout(new FlowLayout());
         setVisible(true);
         setSize(400, 400);
