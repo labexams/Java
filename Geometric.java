@@ -1,4 +1,4 @@
-package com.vishal;
+
 
 interface GeometricShape {
     void area();
