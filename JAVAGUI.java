@@ -13,7 +13,7 @@ public class JAVAGUI {
     }
 }
 
-class ADDSUB extends JFrame implements ActionListener {
+class ADDSUB extends JFrame{
     JTextField t1, t2;
     JButton b1, b2;
     JLabel l;
@@ -42,13 +42,13 @@ class ADDSUB extends JFrame implements ActionListener {
 
             }
         });
-        b2.addActionListener(ae ->
-        {
-            int num1 = Integer.parseInt(t1.getText());
-            int num2 = Integer.parseInt(t2.getText());
-            int value = num1 - num2;
-            l.setText(value + "");
-
+        b2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae) {
+                int num1 = Integer.parseInt(t1.getText());
+                int num2 = Integer.parseInt(t2.getText());
+                int value = num1 - num2;
+                l.setText(value + "");
+            }
         });
         setLayout(new FlowLayout());
         setVisible(true);
