@@ -3,68 +3,45 @@
 import java.util.Scanner;
 
 class BankAccount {
-    String name, type;
-    int acctno;
-    double balance;
-    double wbalance;
-    Scanner s = new Scanner(System.in);
-
-    public BankAccount() {
-        name = "abc";
-        type = "saving";
-        acctno = 1234567890;
-        balance = 10000.00;
+    String name,acno,type;
+    double bal;
+    BankAccount()
+    {
+        this.name = "name";
+        this.acno = "acno";
+        this.type = "type";
+        this.bal = 10000;
     }
-
-    public BankAccount(String n, String t, int an, double bl) {
-        name = n;
-        type = t;
-        acctno = an;
-        balance = bl;
+    BankAccount(String name,String acno,String type,double bal){
+        this.name = name;
+        this.acno = acno;
+        this.type = type;
+        this.bal = bal;
     }
-
-    void deposit() {
-        double dat;
-        System.out.println("Enter the amount to deposit: ");
-        dat = s.nextDouble();
-        if (dat > 0) {
-            balance += dat;
-        } else
-            System.out.println("Enter the valid Amount");
+    void deposit(int amt){
+        bal += amt;
+        System.out.println("Total balance is"+bal);
     }
-
-    void withdraw() {
-        System.out.println("Enter the amount to withdraw : ");
-        wbalance = s.nextDouble();
-        if (wbalance > 0) {
-            balance -= wbalance;
-        } else {
-            System.out.println("Enter the valid Amount");
+    void withdraw(int amt){
+        if (amt>bal){
+            System.out.println("Not having sufficient amount to withdraw");
+        }
+        else{
+            System.out.println("Successfully with drawn "+amt+"rs.");
+            bal -= amt;
         }
     }
-
-    void display() {
-        System.out.println("Account Holder Name: " + name);
-        System.out.println("Account Number: " + acctno);
-        System.out.println("Account Number: " + type);
-        System.out.println("Account Balance: " + balance);
-        System.out.println();
+    void display(){
+        System.out.println("Name:"+name+"\nAccount number:"+acno+"\nType:"+type+"\nBalance:"+bal);
     }
 }
 
 public class Executeaccount {
-    public static void main(String args[]) {
-        BankAccount ba1 = new BankAccount();
-        BankAccount ba2 = new BankAccount("Sreenivas", "Saving", 1234567891, 20000);
-        System.out.println("1st Account holder Details : \n");
-        ba1.display();
-        ba1.deposit();
-        ba1.withdraw();
-        ba1.display();
-        System.out.println("2nd Account holder Details : \n");
-        ba2.display();
-        ba2.deposit();
-        ba2.withdraw();
-        ba2.display();
+    public static void main(String[] args) {
+        BankAccount p1 = new BankAccount("Person","123456789","Savings",10000);
+        p1.display();
+        p1.withdraw(100);
+        p1.deposit(500);
+        p1.display();
     }
 }
